@@ -3,7 +3,7 @@
 
 ## Do boot ao desktop, em Assembly
 
-ROSSAN e um sistema operacional experimental para x86, construido em Assembly
+ROSSAN e um sistema operacional 100% brasileiro e experimental para x86, construido em Assembly
 com FASM. O projeto acompanha a maquina desde os primeiros passos do boot em
 16 bits ate um ambiente grafico em modo protegido de 32 bits, com memoria
 virtual, interrupcoes, framebuffer, cursor e aplicativos internos.
