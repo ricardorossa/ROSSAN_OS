@@ -63,7 +63,10 @@ qemu-system-i386 -m 64 -drive file="rossan-fixed.img",format=raw,if=floppy -boot
 Para a imagem FAT32:
 qemu-system-i386 -m 64 -drive file="rossan-boot-fat32-superfloppy.img",format=raw,if=ide -boot order=c
 
-Se preferir, pode também salvar utilizar o RUFUS para gravar a imagem em um pendrive e utilizar em seu computador como pendrive bootavel, executando assim em modo real.
-Estado atual
+## Boot via pendrive
+
+Se preferir, pode também utilizar o RUFUS para gravar a imagem em um pendrive e utilizar em seu computador como pendrive bootavel, executando assim em modo real. 
+Configure a BIOS de seu computador para Legacy Mode (desabilite o Boot Secury Mode).
+
 
 ## ROSSAN esta em desenvolvimento ativo.
