@@ -15,6 +15,7 @@ GDT, IDT, TSS e pilhas do sistema.
 Inicializacao dos segmentos de codigo e dados.
 Kernel monolitico organizado em modulos Assembly.
 Estruturas para processos, threads, objetos, listas e sincronizacao.
+Mouse PS2/Touchpad
 
 ## Memoria
 
