@@ -3,8 +3,8 @@
 
 ## Do boot ao desktop, em Assembly
 
-ROSSAN e um sistema operacional 100% brasileiro e experimental para x86, construido em Assembly
-com FASM. O projeto acompanha a maquina desde os primeiros passos do boot em
+ROSSAN e um sistema operacional 100% brasileiro e experimental para x86, desenvolvido por Ricardo Rossa e criado entre 2004/2005, após quase 20 anos de pausa técnica, o projeto está sendo reativado.
+O SO é construido em Assembly. O projeto acompanha a maquina desde os primeiros passos do boot em
 16 bits ate um ambiente grafico em modo protegido de 32 bits, com memoria
 virtual, interrupcoes, framebuffer, cursor e aplicativos internos.
 
