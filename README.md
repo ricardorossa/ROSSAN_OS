@@ -1,3 +1,6 @@
+<img width="800" height="603" alt="image" src="https://github.com/user-attachments/assets/eb09bf4e-970c-4112-97fd-4c218445725c" />
+
+
 # ROSSAN
 
 ## Do boot ao desktop, em Assembly
