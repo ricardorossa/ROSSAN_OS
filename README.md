@@ -86,3 +86,5 @@ Configure a BIOS de seu computador para Legacy Mode (desabilite o Boot Secury Mo
 
 
 ## ROSSAN esta em desenvolvimento ativo.
+## Copyright 2004-2026 Ricardo Rosssa. All rights reserved.
+## Provided "as is" without warranty of any kind
