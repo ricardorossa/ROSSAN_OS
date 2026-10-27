@@ -1,14 +1,11 @@
-<img width="800" height="603" alt="image" src="https://github.com/user-attachments/assets/eb09bf4e-970c-4112-97fd-4c218445725c" />
+# ROSSAN<img width="910" height="680" alt="ROSSAN" src="https://github.com/user-attachments/assets/3e69b496-7846-4edb-a3b5-a733a7ab8611" />
 
-
-# ROSSAN
 
 ## Do boot ao desktop, em Assembly
 
-ROSSAN é um sistema operacional 100% brasileiro e experimental para x86, desenvolvido por Ricardo Rossa e criado entre 2004/2005, após quase 20 anos de pausa técnica, o projeto está sendo reativado. O SO é construido em Assembly. O projeto acompanha a maquina desde os primeiros passos do boot em 16 bits ate um ambiente grafico em modo protegido de 32 bits, com memoria virtual, interrupcoes, framebuffer, cursor e aplicativos internos.
-Aqui, cada camada esta exposta: o boot prepara o processador, o kernel assume o controle da memoria e dos dispositivos, e a interface grafica nasce direto da escrita no framebuffer. ROSSAN e um laboratorio pratico para entender como um computador realmente funciona por dentro.
+ROSSAN é um sistema operacional 100% brasileiro para x86, desenvolvido por Ricardo Rossa e criado entre 2004/2005, após quase 20 anos de pausa técnica, o projeto está sendo reativado. O SO é construido em Assembly. O projeto acompanha a maquina desde os primeiros passos do boot em 16 bits ate um ambiente grafico em modo protegido de 32 bits, com memoria virtual, interrupcoes, framebuffer, cursor e aplicativos internos.
 
-Versão 1.0.1
+Versão 1.0.1 26/10/2026
 - Suporte nativo a drive USB EHCI 2.0 (OHCI e UHCI não estão nos planos).
 - Suporte a FAT32.
 - MSC integrado ao EHCI para leitura de arquivos.
@@ -21,7 +18,7 @@ Versão 1.0.1
 - Tradução para o inglês
 - Leitura básica do teclado USB em modo de 32 bits.
 
-Versão 1.0.0:
+Versão 1.0.0 (2004~2026)
 
 # O que já existe
 
