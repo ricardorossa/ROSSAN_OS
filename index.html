@@ -1,114 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ROSSAN OS</title>
-  <meta name="description" content="Rossan32: sistema operacional experimental de 32 bits, com interface gráfica, suporte FAT32 e USB 2.0 EHCI.">
-  <style>
-    :root { color-scheme: dark; --bg:#0d1117; --panel:#161b22; --line:#30363d; --text:#e6edf3; --muted:#9da7b3; --accent:#58a6ff; --accent2:#79c0ff; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
-    a { color:var(--accent2); text-decoration:none; } a:hover { text-decoration:underline; }
-    .wrap { width:min(980px, calc(100% - 32px)); margin:auto; }
-    header { padding:64px 0 42px; text-align:center; border-bottom:1px solid var(--line); background:radial-gradient(ellipse at top, #172b45 0, transparent 65%); }
-    .logo { max-width:100%; width:760px; border-radius:12px; border:1px solid var(--line); margin:20px auto 28px; display:block; }
-    h1 { font-size:clamp(2.2rem, 6vw, 3.6rem); margin:0; letter-spacing:-.04em; }
-    .subtitle { color:var(--muted); font-size:1.12rem; max-width:720px; margin:12px auto 0; }
-    .tag { display:inline-block; margin-top:18px; border:1px solid #244a70; color:var(--accent2); background:#10243a; padding:4px 12px; border-radius:999px; font-size:.85rem; }
-    nav { display:flex; flex-wrap:wrap; justify-content:center; gap:14px 22px; padding:15px 0; border-bottom:1px solid var(--line); font-size:.92rem; }
-    main { padding:28px 0 56px; }
-    section { margin:34px 0; }
-    h2 { font-size:1.55rem; margin:0 0 15px; letter-spacing:-.02em; }
-    h3 { font-size:1.12rem; margin:20px 0 8px; }
-    .panel { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px; }
-    ul,ol { padding-left:22px; } li { margin:7px 0; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
-    .feature { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:16px; }
-    .feature strong { display:block; margin-bottom:4px; }
-    pre { overflow:auto; background:#070b10; border:1px solid var(--line); border-radius:9px; padding:16px; color:#c9d1d9; }
-    code { font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace; font-size:.93em; }
-    .muted { color:var(--muted); }
-    footer { border-top:1px solid var(--line); padding:26px 0 40px; color:var(--muted); font-size:.92rem; }
-    @media(max-width:600px) { header { padding-top:40px; } .panel { padding:17px; } nav { gap:10px 14px; } }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ROSSAN OS — Experimental Operating System</title>
+<meta name="description" content="ROSSAN OS é um sistema operacional independente e experimental x86 de 32 bits.">
+<style>
+:root{color-scheme:dark;--bg:#080d16;--panel:#101a29;--panel2:#0c1421;--line:#24344b;--text:#e9f1fb;--muted:#98aabe;--blue:#62a9ff;--cyan:#64e0e4}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#18365b 0,transparent 45%),var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.wrap{width:min(1100px,calc(100% - 36px));margin:auto}.top{border-bottom:1px solid var(--line);padding:15px 0;background:#080d16cc}.topin{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;letter-spacing:.12em}.brand span{color:var(--cyan)}nav{display:flex;flex-wrap:wrap;gap:18px;font-size:.9rem}.hero{text-align:center;padding:90px 0 64px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-size:.8rem}.hero h1{font-size:clamp(3rem,9vw,6.2rem);line-height:1;margin:15px 0;letter-spacing:-.06em}.hero h1 span{color:var(--blue)}.hero p{max-width:730px;margin:20px auto;color:var(--muted);font-size:1.15rem}.heroimg{width:min(850px,100%);border:1px solid var(--line);border-radius:15px;margin:35px auto 20px;box-shadow:0 25px 80px #0008}.pill{display:inline-block;border:1px solid #33577b;background:#11263b;border-radius:100px;padding:5px 13px;color:#b9dcff;font-size:.85rem;margin:4px}.actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:26px}.btn{display:inline-block;border-radius:9px;padding:11px 18px;border:1px solid #36516f;background:#14243a;color:#eaf4ff;font-weight:650}.btn.primary{background:linear-gradient(120deg,#2677cb,#2461a5);border-color:#4b98e6}.btn:hover{text-decoration:none;filter:brightness(1.12)}section{padding:45px 0}h2{font-size:1.8rem;letter-spacing:-.03em;margin:0 0 12px}h2:after{content:'';display:block;width:52px;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));margin-top:10px;border-radius:4px}.intro{font-size:1.08rem;color:var(--muted);max-width:850px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin-top:25px}.card{border:1px solid var(--line);background:linear-gradient(145deg,var(--panel),var(--panel2));padding:20px;border-radius:13px}.card .ico{font-size:1.45rem;color:var(--cyan);margin-bottom:10px}.card strong{display:block;margin-bottom:5px}.card p{margin:0;color:var(--muted);font-size:.94rem}.apps .card{font-weight:600}.panel{border:1px solid var(--line);background:var(--panel);padding:24px;border-radius:14px;margin-top:20px}.steps{padding-left:23px}.steps li{padding:5px 0}.code{position:relative;border:1px solid var(--line);border-radius:12px;background:#050910;margin:15px 0;padding:18px;overflow:auto;color:#c7ddf4}.code code{font: .9rem/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre}.split{display:grid;grid-template-columns:1fr 1fr;gap:18px}.notice{color:var(--muted);border-left:3px solid var(--blue);padding:12px 16px;background:#102034;border-radius:0 8px 8px 0}.footer{border-top:1px solid var(--line);padding:35px 0 50px;color:var(--muted);font-size:.9rem}.footerin{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px}.muted{color:var(--muted)}@media(max-width:700px){.topin{flex-direction:column}nav{justify-content:center}.hero{padding:60px 0 35px}.split{grid-template-columns:1fr}.wrap{width:min(100% - 26px,1100px)}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <h1>ROSSAN OS - 32bits</h1>
-      <p class="subtitle">Um sistema operacional experimental de 32 bits - 100% brasileiro!</p>
-      <img class="logo" src="https://github.com/user-attachments/assets/297dbc5a-8a57-4185-9e83-320fdd87a530" alt="Rossan32">
-      <span class="tag">ROSSAN · x86 · 32 bits</span>
-    </div>
-  </header>
-  <nav class="wrap" aria-label="Navegação">
-    <a href="#recursos">Recursos</a><a href="#apps">Aplicativos</a><a href="#instalar">Instalação</a><a href="#qemu">QEMU</a><a href="#hardware">Hardware</a><a href="#licenca">Licença</a><a href="#estado">Estado do projeto</a>
-  </nav>
-  <main class="wrap">
-    <section>
-      <p><strong>ROSSAN OS</strong> é um sistema operacional experimental de 32 bits, totalmente brasileiro, desenvolvido inicialmente em 2004 em Joinville-SC por Ricardo Rossa, distribuído como uma imagem de disco pronta para instalação em hardware compatível ou execução em emuladores.</p>
-    </section>
-    <section id="recursos">
-      <h2>Recursos</h2>
-      <div class="grid">
-        <div class="feature"><strong>Arquitetura</strong>Sistema operacional de 32 bits iniciado pelo BIOS.</div>
-        <div class="feature"><strong>Interface gráfica</strong>Interface gráfica com janelas e cursor.</div>
-        <div class="feature"><strong>Vídeo</strong>Framebuffer em resoluções compatíveis com VESA.</div>
-        <div class="feature"><strong>Entrada</strong>Suporte a teclado PS/2 e mouse PS/2.</div>
-        <div class="feature"><strong>Aplicativos</strong>Aplicativos integrados ao sistema.</div>
-        <div class="feature"><strong>Arquivos</strong>Arquivos e aplicativos disponíveis em FAT32.</div>
-        <div class="feature"><strong>Boot</strong>Compatibilidade com imagens de disco iniciáveis.</div>
-        <div class="feature"><strong>Virtualização</strong>Distribuição pronta para execução em máquina virtual.</div>
-        <div class="feature"><strong>USB</strong>Drive USB 2.0 (EHCI).</div>
-      </div>
-    </section>
-    <section id="apps">
-      <h2>Aplicativos disponíveis</h2>
-      <p>A instalação inclui uma interface gráfica com os seguintes recursos:</p>
-      <div class="grid">
-        <div class="feature">Calculadora</div><div class="feature">Calendário</div><div class="feature">Bloco de notas</div>
-        <div class="feature">Games</div><div class="feature">Informações de CPU e RAM</div><div class="feature">Relógio</div>
-        <div class="feature">Informações de disco</div><div class="feature">Tela de desenho</div>
-      </div>
-    </section>
-    <section id="instalar">
-      <h2>Como instalar</h2>
-      <p>Baixe a imagem oficial do Rossan32 disponível nas <a href="https://github.com/">releases do GitHub</a> do projeto.</p>
-      <p>Uma imagem preparada pode ser fornecida no formato:</p>
-      <pre><code>rossan-boot-fat32-superfloppy.img</code></pre>
-      <p>Essa imagem já contém:</p>
-      <ul><li>Boot loader</li><li>Kernel Rossan32</li><li>Interface gráfica</li><li>Configuração</li><li>Aplicativos</li><li>Ícones e recursos visuais</li></ul>
-      <p>Não é necessário compilar ou configurar arquivos-fonte.</p>
-      <div class="panel">
-        <h3>Máquina física</h3>
-        <ol><li>Grave a imagem em um Pendrive usando uma ferramenta como Rufus.</li><li>Reinicie o computador.</li><li>Acesse o menu de boot da BIOS.</li><li>Selecione a mídia que contém o ROSSAN.</li><li>Aguarde a inicialização do sistema.</li></ol>
-      </div>
-    </section>
-    <section id="qemu">
-      <h2>Como executar no QEMU</h2>
-      <p>Requisitos:</p><ul><li>QEMU instalado no Windows</li><li>Arquivo <code>.img</code> da distribuição ROSSAN</li></ul>
-      <p>Com a imagem FAT32:</p>
-      <pre><code>qemu-system-i386 -m 64 -rtc base=localtime -drive file="rossan-boot-fat32-superfloppy.img",format=raw,if=ide -boot order=c</code></pre>
-      <p>Também é possível abrir a imagem em um software de virtualização compatível com discos RAW, desde que ele permita inicialização por BIOS.</p>
-    </section>
-    <section id="hardware">
-      <h2>Requisitos de hardware</h2>
-      <p>O Rossan32 foi desenvolvido para hardware x86.</p>
-    </section>
-    <section id="licenca">
-      <h2>Licença e distribuição</h2>
-      <p>Esta distribuição oferece o Rossan32 como uma imagem de sistema pronta para uso, de forma experimental, sem nenhuma garantia. Não redistribua arquivos modificados como se fossem imagens oficiais sem identificação clara da origem.</p>
-      <p><strong>Copyright 2004-2026 Ricardo Rossa</strong><br>Sem nenhuma garantia.</p>
-    </section>
-    <section id="estado">
-      <h2>Estado do projeto</h2>
-      <p>O Rossan32 é um projeto experimental. Recursos podem mudar entre versões, e compatibilidade com hardware real ou máquinas virtuais não é garantida.</p>
-      <p>Para problemas específicos de uma versão, informe:</p>
-      <ul><li>Nome do arquivo da imagem</li><li>Máquina ou emulador utilizado</li><li>Resolução configurada</li><li>Mensagens exibidas na tela</li></ul>
-    </section>
-  </main>
-  <footer><div class="wrap">Rossan32 · Copyright 2004-2026 Ricardo Rossa</div></footer>
-</body>
-</html>
+<div class="top"><div class="wrap topin"><a class="brand" href="#top">R<span>O</span>SSAN OS</a><nav aria-label="Navegação"><a href="#features">Features</a><a href="#apps">Apps</a><a href="#download">Download</a><a href="#qemu">QEMU</a><a href="#about">About</a></nav></div></div>
+<header class="hero wrap" id="top"><div class="eyebrow">Independent OS project · x86 · 32-bit</div><h1>ROSSAN<span> OS</span></h1><p>Um sistema operacional experimental independente de 32 bits. 100% brasileiro.</p><img class="heroimg" src="https://github.com/user-attachments/assets/297dbc5a-8a57-4185-9e83-320fdd87a530" alt="ROSSAN OS"><div><span class="pill">32-bit x86</span><span class="pill">BIOS Boot</span><span class="pill">FAT32</span><span class="pill">USB 2.0 EHCI</span></div><div class="actions"><a class="btn primary" href="#download">Download / Instalação</a><a class="btn" href="#features">Conheça os recursos</a></div></header>
+<main class="wrap">
+<section id="about"><h2>Sobre o ROSSAN</h2><p class="intro">ROSSAN OS é um sistema operacional experimental independente de 32 bits para arquitetura x86, totalmente brasileiro, desenvolvido inicialmente em 2004 em Joinville-SC por Ricardo Rossa, distribuído como uma imagem de disco pronta para instalação em hardware compatível ou execução em emuladores.</p></section>
+<section id="features"><h2>Recursos</h2><div class="grid">
+<div class="card"><div class="ico">⌘</div><strong>32-bit x86</strong><p>Sistema operacional de 32 bits iniciado pelo BIOS.</p></div><div class="card"><div class="ico">▣</div><strong>Interface gráfica</strong><p>Ambiente gráfico com janelas e cursor.</p></div><div class="card"><div class="ico">▤</div><strong>Framebuffer VESA</strong><p>Modo gráfico em resoluções compatíveis com VESA.</p></div><div class="card"><div class="ico">⌨</div><strong>PS/2 Input</strong><p>Suporte a teclado PS/2 e mouse PS/2.</p></div><div class="card"><div class="ico">▦</div><strong>Aplicativos integrados</strong><p>Ferramentas e aplicativos disponíveis no sistema.</p></div><div class="card"><div class="ico">▱</div><strong>FAT32</strong><p>Arquivos e aplicativos acessíveis por FAT32.</p></div><div class="card"><div class="ico">↥</div><strong>Bootable image</strong><p>Compatibilidade com imagens de disco iniciáveis.</p></div><div class="card"><div class="ico">▧</div><strong>Virtualização</strong><p>Imagem preparada para executar em máquina virtual.</p></div><div class="card"><div class="ico">⇄</div><strong>USB 2.0 EHCI</strong><p>Controlador USB EHCI integrado.</p></div></div></section>
+<section id="apps" class="apps"><h2>Aplicativos</h2><p class="intro">A instalação inclui uma interface gráfica com ferramentas e aplicações:</p><div class="grid"><div class="card">▣ &nbsp;Calculadora</div><div class="card">▦ &nbsp;Calendário</div><div class="card">▤ &nbsp;Bloco de notas</div><div class="card">▸ &nbsp;Games</div><div class="card">▥ &nbsp;Informações de CPU e RAM</div><div class="card">◷ &nbsp;Relógio</div><div class="card">▱ &nbsp;Informações de disco</div><div class="card">✎ &nbsp;Tela de desenho</div></div></section>
+<section id="download"><h2>Instalação</h2><p class="intro">Baixe a imagem oficial do ROSSAN OS <a href="https://github.com/ricardorossa/ROSSAN_OS/blob/main/rossan-boot-fat32-superfloppy_1_0_1.img">clicando aqui</a> ou nas <a href="https://github.com/ricardorossa/ROSSAN_OS">Releases do repositório</a> do projeto.</p><div class="panel"><strong>Imagem de distribuição</strong><div class="code"><code>rossan-boot-fat32-superfloppy.img</code></div><p class="muted">A imagem preparada contém os componentes necessários para inicialização e utilização.</p><div class="grid"><div class="card">Boot loader</div><div class="card">Kernel Rossan32</div><div class="card">Interface gráfica</div><div class="card">Configuração</div><div class="card">Aplicativos</div><div class="card">Ícones e recursos visuais</div></div><p>Não é necessário compilar ou configurar arquivos-fonte para utilizar essa distribuição.</p><div class="actions"><a class="btn primary" href="https://github.com/">https://github.com/ricardorossa/ROSSAN_OS</a></div></div><div class="split"><div class="panel"><h3>Máquina física</h3><ol class="steps"><li>Grave a imagem em um pendrive usando uma ferramenta como Rufus.</li><li>Reinicie o computador.</li><li>Acesse o menu de boot da BIOS.</li><li>Selecione a mídia que contém o Rossan.</li><li>Aguarde a inicialização.</li></ol></div><div class="panel"><h3>Requisitos</h3><ul class="steps"><li>Hardware x86 compatível</li><li>Boot pelo BIOS</li><li>Pendrive com imagem de distribuição</li></ul><p class="muted">Compatibilidade com equipamentos específicos pode variar.</p></div></div></section>
+<section id="qemu"><h2>Executar no QEMU</h2><p>Requisitos: QEMU instalado no Windows e o arquivo <code>.img</code> da distribuição.</p><p>Execute no PowerShell:</p><div class="code"><code>qemu-system-i386 -m 64 -rtc base=localtime -drive file="rossan-boot-fat32-superfloppy.img",format=raw,if=ide -boot order=c</code></div><p class="muted">Também é possível utilizar softwares de virtualização compatíveis com discos RAW, desde que permitam inicialização por BIOS.</p></section>
+<section id="license"><h2>Licença e distribuição</h2><div class="panel"><p>Esta distribuição oferece o Rossan32 como uma imagem de sistema pronta para uso, de forma experimental, sem nenhuma garantia. Não redistribua arquivos modificados como se fossem imagens oficiais sem identificação clara da origem.</p><p><strong>Copyright 2004-2026 Ricardo Rossa</strong><br><span class="muted">Sem nenhuma garantia.</span></p></div></section>
+<section id="status"><h2>Estado do projeto</h2><p class="intro">Rossan32 é um projeto experimental. Recursos podem mudar entre versões, e compatibilidade com hardware real ou máquinas virtuais não é garantida.</p><div class="panel"><strong>Ao relatar problemas, informe:</strong><ul><li>Nome do arquivo da imagem</li><li>Máquina ou emulador utilizado</li><li>Resolução configurada</li><li>Mensagens exibidas na tela</li></ul></div></section>
+</main><footer class="footer"><div class="wrap footerin"><div><strong>ROSSAN32</strong><br>Experimental 32-bit Operating System</div><div>Copyright 2004-2026 Ricardo Rossa<br><span>Built as an independent experimental project.</span></div></div></footer>
+</body></html>
